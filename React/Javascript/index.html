@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <b id="one"></b>
+    <button onclick="handleClick()">Add</button>
+    <button onclick="handleSub()">Sub</button>
+    <button onclick="handleNum1()" id="two">1</button>
+    <button onclick="handleNum2()" id="three">2</button>
+    <button onclick="handleSum()">Sum</button>
+    <b id="four"></b>
+</body>
+<script>
+    let num = 0
+    const handleClick = () => {
+        document.getElementById("one").innerText = num++
+    }
+    const handleSub = () => {
+        let Value = document.getElementById("one").innerText = num--
+        if (Value < 0) {
+            document.getElementById("one").innerText = "Error"
+        }
+    }
+
+    let Empty = []
+    const handleNum1 = () => {
+        const NumVal = document.getElementById("two").innerText
+        Empty.push(parseInt(NumVal))
+    }
+    const handleNum2 = () => {
+        const NumVal1 = document.getElementById("three").innerText
+        Empty.push(parseInt(NumVal1))
+    }
+    const handleSum = () => {
+        const Sum = Empty.reduce((acc, curr) => acc + curr, 0)
+        document.getElementById('four').innerText = Sum
+    }
+    
+    let a = 6
+    function test() {
+        let a = 7
+        function again() {
+            let a = 8
+            alert(a)
+        }
+        again()
+        alert(a)
+    }
+    test()
+    alert(a)
+</script>
+
+</html>
